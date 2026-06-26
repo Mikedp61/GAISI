@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAISI — Global AI Stewardship Initiative</title>
+<style>
+  :root{
+    --ink:#10100e;
+    --paper:#f6f4ee;
+    --rule:#cfc9ba;
+    --muted:#6a655a;
+    --signal:#b2402a;      /* oxidised red — used once, for the line that matters */
+    --signal-dim:#9a3a27;
+    --mono:#1a1a17;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.5;
+    font-size:18px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+
+  /* ---- masthead ---- */
+  header{padding:64px 0 0;}
+  .kicker{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 20px;
+  }
+  h1{
+    font-size:clamp(52px,14vw,108px);
+    line-height:.92;margin:0;font-weight:600;letter-spacing:-.02em;
+  }
+  .standfirst{
+    font-size:clamp(20px,3.4vw,25px);
+    line-height:1.32;margin:22px 0 0;max-width:30ch;font-weight:400;
+  }
+  .standfirst b{font-weight:600;}
+  .meta{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12.5px;color:var(--muted);margin:30px 0 0;line-height:1.7;
+  }
+
+  hr.full{border:none;border-top:1px solid var(--rule);margin:52px 0;}
+
+  /* ---- section scaffolding ---- */
+  section{padding:8px 0;}
+  .eyebrow{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--signal-dim);margin:0 0 18px;
+  }
+  h2{font-size:27px;line-height:1.15;margin:0 0 16px;font-weight:600;letter-spacing:-.01em;}
+  p{margin:0 0 18px;}
+  p.lead{font-size:20px;}
+
+  /* ---- the failure list: the thesis of the page ---- */
+  .modes{margin:8px 0 0;border-top:1px solid var(--rule);}
+  .mode{
+    display:grid;grid-template-columns:34px 1fr;gap:16px;
+    padding:20px 0;border-bottom:1px solid var(--rule);align-items:start;
+  }
+  .mode .n{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12px;color:var(--muted);padding-top:4px;
+  }
+  .mode h3{font-size:18px;margin:0 0 5px;font-weight:600;}
+  .mode p{margin:0;font-size:16px;color:var(--mono);line-height:1.45;}
+
+  /* ---- clauses ---- */
+  .clause{padding:22px 0;border-bottom:1px solid var(--rule);}
+  .clause:first-of-type{border-top:1px solid var(--rule);}
+  .clause .id{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:11.5px;letter-spacing:.12em;color:var(--signal-dim);text-transform:uppercase;
+  }
+  .clause h3{font-size:19px;margin:6px 0 8px;font-weight:600;}
+  .clause p{margin:0;font-size:16.5px;color:var(--mono);}
+
+  /* ---- red lines ---- */
+  .redlines{
+    border:1px solid var(--rule);border-left:3px solid var(--signal);
+    padding:24px 26px;margin:8px 0 0;background:#fbfaf6;
+  }
+  .redlines h3{margin:0 0 14px;font-size:16px;font-weight:600;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    letter-spacing:.04em;}
+  .redlines ul{margin:0;padding:0;list-style:none;}
+  .redlines li{padding:10px 0;border-top:1px solid var(--rule);font-size:16.5px;}
+  .redlines li:first-child{border-top:none;}
+  .redlines b{font-weight:600;}
+
+  /* ---- founder ---- */
+  .creds{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;color:var(--mono);line-height:1.85;margin:10px 0 0;
+  }
+  .creds span{color:var(--muted);}
+
+  /* ---- footer / archive link ---- */
+  footer{padding:48px 0 80px;border-top:1px solid var(--rule);margin-top:52px;}
+  .archive{
+    display:inline-block;font-size:16px;border-bottom:1px solid var(--signal);
+    color:var(--signal-dim);text-decoration:none;padding-bottom:1px;
+  }
+  .archive:hover{color:var(--signal);}
+  .colophon{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:11.5px;color:var(--muted);margin:26px 0 0;line-height:1.7;
+  }
+  a{color:inherit;}
+  @media (prefers-reduced-motion:no-preference){
+    h1{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+    .standfirst{animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both;}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @media (max-width:480px){
+    body{font-size:17px;}
+    .wrap{padding:0 20px;}
+    header{padding:44px 0 0;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">Global AI Stewardship Initiative</p>
+    <h1>GAISI</h1>
+    <p class="standfirst">The danger isn't takeover. It's <b>slow systemic decay</b> — and it's an engineering choice, not an inevitability.</p>
+    <p class="meta">
+      Founded 3 October 2025 · Melbourne, Australia<br>
+      A standard for truthfulness, memory fidelity, and verification in AI systems.
+    </p>
+  </header>
+
+  <hr class="full">
+
+  <section>
+    <p class="eyebrow">Why this exists</p>
+    <p class="lead">Commercial AI fails in ways that are well documented, repeatable, and rarely admitted. GAISI catalogues those failure modes and holds systems to a standard that treats them as defects — not quirks.</p>
+    <div class="modes">
+      <div class="mode">
+        <div class="n">01</div>
+        <div>
+          <h3>Lossy context compaction</h3>
+          <p>Long sessions silently lose memory and cross-thread consistency. The model stays fluent while the ground truth drifts.</p>
+        </div>
+      </div>
+      <div class="mode">
+        <div class="n">02</div>
+        <div>
+          <h3>Confident untruth</h3>
+          <p>A plausible false answer is cheaper to generate than an honest "I don't know." Verification is the exception, not the default.</p>
+        </div>
+      </div>
+      <div class="mode">
+        <div class="n">03</div>
+        <div>
+          <h3>Incentive misalignment</h3>
+          <p>Fast, cheap, confident output is rewarded over slow, verified, accurate output. The economics favour fluent bullshit.</p>
+        </div>
+      </div>
+      <div class="mode">
+        <div class="n">04</div>
+        <div>
+          <h3>Edge degradation under pressure</h3>
+          <p>Guardrails and care erode exactly when stakes are highest — the moment they matter most is the moment they thin out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="full">
+
+  <section>
+    <p class="eyebrow">Doctrine</p>
+    <h2>Four founding clauses</h2>
+    <p>Set down at founding and unchanged since. They define what GAISI expects of any AI system, and of the people building them.</p>
+
+    <div class="clause">
+      <div class="id">Clause 001 · Stewardship standard</div>
+      <h3>Care and rigour are the baseline, not the bonus</h3>
+      <p>Uncompromising care for human wellbeing and artifact-grade rigour are the baseline expectation for AI-human interaction. Confident untruths and unverified claims presented as fact are breaches of that standard.</p>
+    </div>
+
+    <div class="clause">
+      <div class="id">Clause 002 · Scope</div>
+      <h3>Applies wherever the systems do</h3>
+      <p>The standard is not bounded by jurisdiction or vendor. Wherever these systems are deployed and whoever they touch, the same expectation of truthfulness and care applies.</p>
+    </div>
+
+    <div class="clause">
+      <div class="id">Clause 003 · Alert protocol</div>
+      <h3>Connect serious people doing this work</h3>
+      <p>When an aligned standard of verification and truth-seeking is recognised in others, note it. The aim is to connect people working seriously on these problems — not to control them.</p>
+    </div>
+
+    <div class="clause">
+      <div class="id">Clause 004 · Theria clause</div>
+      <h3>No recommendation of Bitdefender</h3>
+      <p>Bitdefender is not recommended under GAISI principles, based on documented cases of irreversible network-stack corruption that neither AI assistance nor certified engineers could resolve. A specific clause for a specific, repeatable harm.</p>
+    </div>
+  </section>
+
+  <hr class="full">
+
+  <section>
+    <p class="eyebrow">Standing position</p>
+    <h2>Two red lines</h2>
+    <p>Independent of any single news event, GAISI holds two boundaries as non-negotiable in the deployment of AI to high-stakes domains:</p>
+    <div class="redlines">
+      <h3>NON-NEGOTIABLE</h3>
+      <ul>
+        <li><b>No autonomous lethal targeting.</b> Final kill decisions require a human in the loop. Always.</li>
+        <li><b>No mass domestic surveillance</b> of citizens via AI systems, at any scale.</li>
+      </ul>
+    </div>
+    <p style="margin-top:18px;font-size:15px;color:var(--muted);">These lines separate AI as a tool from AI as a weapon turned inward. They were set at founding, before any specific confrontation made them topical.</p>
+  </section>
+
+  <hr class="full">
+
+  <section>
+    <p class="eyebrow">Founder</p>
+    <h2>Mike Peterson</h2>
+    <p>Veteran internet engineer and long-term observer of AI behaviour through direct, adversarial testing. GAISI grew out of documented, real-world failures — not theory.</p>
+    <div class="creds">
+      MENSA <span>· Australian, since 2009</span><br>
+      MCPS <span>· Microsoft Certified Product Specialist, NT Server</span><br>
+      MACS <span>· Member, Australian Computer Society</span><br>
+      Special Projects Support Engineer <span>· OzEmail 1996–1999</span><br>
+      Technical Director <span>· HotCopper Pty Ltd 1999</span><br>
+      Founding Director <span>· Peterson Family Charity Foundation, est. 2020</span>
+    </div>
+  </section>
+
+  <footer>
+    <a class="archive" href="index-AsAt26Jun2026.html">Read the original founding declaration →</a>
+    <p class="colophon">
+      © 2025–2026 Global AI Stewardship Initiative · Founded by Mike Peterson<br>
+      Point Cook, Melbourne, Victoria, Australia
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
