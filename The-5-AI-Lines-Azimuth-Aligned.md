@@ -24,9 +24,9 @@ mdp 0847hrs 15 September 2026
 
 ---
 
-# SHORT FORM
+## SHORT FORM
 
-## Summary by GPT
+### Summary by GPT
 
 The current AI-pacing debate is being undermined by a fundamental framing and language error: engineering safeguards are being described as “red lines,” a term already associated with political, ethical, and ideological restrictions.
 
@@ -50,11 +50,11 @@ The core conclusion is that public trust and democratic legitimacy are more like
 
 ---
 
-# LONG FORM
+## LONG FORM
 
-## (ESSAY, Mike Peterson.)
+### (ESSAY, Mike Peterson.)
 
-# The Fatal Framing Error in AI Pacing: Why We Must Stop Calling Engineering Interlocks "Red Lines"
+### The Fatal Framing Error in AI Pacing: Why We Must Stop Calling Engineering Interlocks "Red Lines"
 
 When Dario Amodei released his three-step pacing proposal—swiftly backed by Sam Altman and Elon Musk—the immediate reaction from many observers was an exhausted sigh: “Here come more red lines.”
 
@@ -64,7 +64,7 @@ By clinging to the tired, politically weaponized vocabulary of "red lines," the 
 
 To understand why this pacing proposal actually matters—and why the public is misreading it—we have to look past the political noise and change the palette entirely.
 
-## The Two Old Lines Were Red (Ethical & Ideological)
+#### The Two Old Lines Were Red (Ethical & Ideological)
 
 Over the past three years, the discourse around AI guardrails has been dominated by two distinct "red lines":
 
@@ -73,7 +73,7 @@ Over the past three years, the discourse around AI guardrails has been dominated
 
 Both of these were fundamentally political, social, and moral boundaries. Because they rely on human consensus and corporate fiat, they naturally trigger accusations of regulatory capture, bias, and power-grabbing. In the public eye, a "red line" is simply an arbitrary perimeter drawn by an entrenched player to protect their moat.
 
-## The Three New Lines Are Blue (Mechanical & Operational)
+#### The Three New Lines Are Blue (Mechanical & Operational)
 
 The three steps Amodei is outlining now—and that Musk and Altman are signing off on—belong to a completely different domain. They are not ideological guidelines. They are hard engineering interlocks.
 
@@ -88,7 +88,7 @@ They belong in blue, not red:
 * **Line 3: Hard Strategic Containment (Step 3)**  
   Physical compute bottlenecks and hardware-level operational limits with geopolitical adversaries. This is structural isolation—ensuring containment before structural integrity is compromised.
 
-## Why the Distinction Matters
+#### Why the Distinction Matters
 
 A red line is an ethical argument: “You shouldn’t do this because it is wrong.”
 
@@ -102,7 +102,7 @@ Retire the red palette. These are Blue Interlocks—operational, measurable, and
 
 ---
 
-## Publication Links
+### Publication Links
 
 **GAISI — Global AI Stewardship Initiative**  
 https://mikedp61.github.io/GAISI
